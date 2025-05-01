@@ -1,0 +1,316 @@
+:root {
+  --c1: #132035;
+  --c2: #16273c;
+  --c3: #d9b1a2;
+  --c4: #f0d7cb;
+  --c5: #fcf5ef;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* === HEADER === */
+header {
+  height: 100vh;
+  background: url('./img/fundo do mar.jpg') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  padding-left: 10%;
+}
+
+.header-texto {
+  display: flex;
+  flex-direction: column;
+}
+
+header h1 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 5em;
+  max-width: 600px;
+  line-height: 1.2;
+  margin: 0;
+  color: var(--c4);
+}
+
+header h3 {
+  font-family: monospace;
+  font-weight: 300;
+  font-size: 200%;
+  max-width: 600px;
+  line-height: 1.4;
+  margin-top: 10px;
+  transform: translate(2%, 10%);
+  color: var(--c4);
+}
+
+.botao {
+  padding: 15px 100px;
+  font-size: 1em;
+  border: none;
+  border-radius: 30px;
+  position: relative;
+  top: 40px;
+  left: 7px;
+  background-color: var(--c2);
+  color: white;
+  cursor: pointer;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  transition: background 0.5s ease;
+}
+
+.botao:hover {
+  background-color: var(--c3);
+}
+
+/* === FAIXA === */
+.faixa {
+  width: 100%;
+  background-color: var(--c3);
+  color: var(--c5);
+  text-align: center;
+  padding: 10px 20px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+}
+
+.faixa h1 {
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: normal;
+  letter-spacing: 3px;
+  color: #000;
+  text-transform: uppercase;
+  animation: rotate-text 10s linear infinite;
+}
+
+/* === CARDS DE VANTAGENS === */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  padding: 40px 10%;
+  background-color: white;
+  color: var(--c1);
+}
+
+.card {
+  background-color: var(--c4);
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 250px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.vantagens-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: var(--c2);
+}
+
+.card h3 {
+  margin: 10px 0;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 1.1em;
+}
+
+.card p {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 0.95em;
+  line-height: 1.4;
+  max-width: 90%;
+}
+
+/* === RESPONSIVO === */
+@media (max-width: 1024px) {
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .cards-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* === BLOCO "PRA QUEM" === */
+.pra-quem {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: var(--c1);
+}
+
+.pra-quem h2 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: var(--c1);
+}
+
+/* === BOTÃO SECUNDÁRIO === */
+.botao1 {
+  padding: 15px 100px;
+  font-size: 1em;
+  border: none;
+  border-radius: 20px;
+  background-color: var(--c2);
+  color: white;
+  cursor: pointer;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  transition: background 0.5s ease;
+  margin: 40px auto;
+  display: block;
+}
+
+.botao1:hover {
+  background-color: var(--c3);
+}
+
+/* === CARROSSEL === */
+.carrossel-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  padding: 40px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centraliza horizontalmente */
+  min-height: 320px; /* Garante espaço suficiente para os cards de 300px + padding */
+}
+
+.carrossel-infinito {
+  overflow: hidden;
+  flex: 1;
+}
+
+.carrossel-track {
+  display: flex;
+  width: max-content;
+  scroll-behavior: smooth;
+}
+
+
+
+.card1 {
+  width: 200px;
+  height: 300px;
+  margin: 0 10px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  flex-shrink: 0;
+}
+
+
+/* === SETAS === */
+.seta {
+  background-color: var(--c2);
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.seta:hover {
+  background-color: var(--c3);
+}
+
+.seta.esquerda {
+  margin-left: 20px;
+}
+
+.seta.direita {
+  margin-right: 20px;
+}
+
+/* === FOOTER === */
+footer {
+  text-align: center;
+  background: var(--c4);
+  padding: 20px;
+  font-size: 0.9em;
+  color: var(--c5);
+}
+
+footer p {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-size: 1em;
+  margin: 10px 0 0 0;
+  color: var(--c1);
+}
+
+.para-quem {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: var(--c1);
+}
+
+.para-quem h3 {
+  font-family: 'Helvetica Neue', Arial, sans-serif; /* Fonte mais leve */
+  color: var(--c1);
+  font-size: 1.2rem;
+  font-weight: 300; /* Tornar a fonte mais fina */
+  line-height: 1.6;
+  margin: 20px 0;
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+}
+
+.para-quem h3 br {
+  line-height: 1.8;
+}
+
+
+.destaque {
+  font-weight: bold; /* Deixa o texto em negrito */
+  color: var(--c3); /* Altere a cor aqui para o valor desejado */
+}
+/* Estilos para o botão do WhatsApp */
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25D366; /* Cor do botão WhatsApp */
+  color: white;
+  font-size: 2.5rem;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.whatsapp-button:hover {
+  background-color: #128C7E; /* Cor de hover */
+}
+
+.whatsapp-button i {
+  font-size: 1.8rem;
+}
