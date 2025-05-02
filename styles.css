@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
 :root {
   --c1: #132035;
   --c2: #16273c;
@@ -6,11 +8,25 @@
   --c5: #fcf5ef;
 }
 
+/* Reset e ajustes básicos */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
   color: white;
   overflow-x: hidden;
+  font-family: Arial, sans-serif;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* === HEADER === */
@@ -28,23 +44,21 @@ header {
 }
 
 header h1 {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 5em;
+  font-size: 6.5em;
   max-width: 600px;
   line-height: 1.2;
   margin: 0;
-  color: var(--c4);
+  color: white;
 }
 
 header h3 {
-  font-family: monospace;
   font-weight: 300;
   font-size: 200%;
   max-width: 600px;
   line-height: 1.4;
-  margin-top: 10px;
+  margin-top: -10px;
   transform: translate(2%, 10%);
-  color: var(--c4);
+  color: white;
 }
 
 .botao {
@@ -52,14 +66,13 @@ header h3 {
   font-size: 1em;
   border: none;
   border-radius: 30px;
-  position: relative;
-  top: 40px;
-  left: 7px;
   background-color: var(--c2);
   color: white;
   cursor: pointer;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   transition: background 0.5s ease;
+  margin-top: 5px;
+  margin-left: 7px;
 }
 
 .botao:hover {
@@ -122,40 +135,21 @@ header h3 {
 
 .card h3 {
   margin: 10px 0;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 1.1em;
 }
 
 .card p {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 0.95em;
   line-height: 1.4;
   max-width: 90%;
 }
 
-/* === RESPONSIVO === */
-@media (max-width: 1024px) {
-  .cards-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  .cards-container {
-    grid-template-columns: 1fr;
-  }
-}
-
 /* === BLOCO "PRA QUEM" === */
 .pra-quem {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 2em;
   color: var(--c1);
 }
 
-.pra-quem h2 {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: var(--c1);
-}
 
 /* === BOTÃO SECUNDÁRIO === */
 .botao1 {
@@ -181,17 +175,17 @@ header h3 {
   position: relative;
   overflow: hidden;
   width: 100%;
-  background-color: rgb(255, 255, 255);
+  background-color: white;
   padding: 40px 0;
   display: flex;
   align-items: center;
-  justify-content: center; /* Centraliza horizontalmente */
-  min-height: 320px; /* Garante espaço suficiente para os cards de 300px + padding */
+  justify-content: center;
+  min-height: 320px;
 }
 
 .carrossel-infinito {
-  overflow: hidden;
-  flex: 1;
+  overflow-x: auto;
+  max-width: 100%;
 }
 
 .carrossel-track {
@@ -199,8 +193,6 @@ header h3 {
   width: max-content;
   scroll-behavior: smooth;
 }
-
-
 
 .card1 {
   width: 200px;
@@ -212,7 +204,6 @@ header h3 {
   box-shadow: 0 4px 8px rgba(0,0,0,0.3);
   flex-shrink: 0;
 }
-
 
 /* === SETAS === */
 .seta {
@@ -266,10 +257,10 @@ footer p {
 }
 
 .para-quem h3 {
-  font-family: 'Helvetica Neue', Arial, sans-serif; /* Fonte mais leve */
+  font-family: 'Helvetica Neue', Arial, sans-serif;
   color: var(--c1);
   font-size: 1.2rem;
-  font-weight: 300; /* Tornar a fonte mais fina */
+  font-weight: 300;
   line-height: 1.6;
   margin: 20px 0;
   text-align: center;
@@ -283,17 +274,17 @@ footer p {
   line-height: 1.8;
 }
 
-
 .destaque {
-  font-weight: bold; /* Deixa o texto em negrito */
-  color: var(--c3); /* Altere a cor aqui para o valor desejado */
+  font-weight: bold;
+  color: var(--c3);
 }
-/* Estilos para o botão do WhatsApp */
+
+/* === WHATSAPP BUTTON === */
 .whatsapp-button {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: #25D366; /* Cor do botão WhatsApp */
+  background-color: #25D366;
   color: white;
   font-size: 2.5rem;
   width: 60px;
@@ -308,9 +299,137 @@ footer p {
 }
 
 .whatsapp-button:hover {
-  background-color: #128C7E; /* Cor de hover */
+  background-color: #128C7E;
 }
 
 .whatsapp-button i {
   font-size: 1.8rem;
+}
+
+/* === RESPONSIVO === */
+@media (max-width: 1024px) {
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2.5em;
+    max-width: 100%;
+  }
+
+  header h3 {
+    font-size: 1.2em;
+    transform: translate(0, 0);
+  }
+
+  .botao {
+    padding: 10px 40px;
+    font-size: 0.9em;
+    margin-left: 0;
+  }
+
+  header {
+    padding-left: 5%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .header-texto {
+    align-items: center;
+  }
+
+  .card1 {
+    width: 150px;
+    height: 220px;
+  }
+}
+
+@media (max-width: 600px) {
+  .cards-container {
+    grid-template-columns: 1fr;
+  }
+
+  .whatsapp-button {
+    width: 50px;
+    height: 50px;
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .botao1 {
+    padding: 10px 30px;
+    font-size: 0.9em;
+    border-radius: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .botao1 {
+    padding: 8px 20px;
+    font-size: 0.85em;
+    border-radius: 18px;
+  }
+}
+
+.comentarios {
+  background-color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.comentarios h2 {
+  color: var(--c1);
+  font-size: 2em;
+  margin-bottom: 40px;
+}
+
+.comentario-carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.comentario-card {
+  width: 500px;
+  max-width: 80%;
+  background-color: white;
+  border: 2px solid var(--c2);
+  border-radius: 10px;
+  padding: 40px;
+  margin: 0 10px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 0.8s ease;
+  position: absolute;
+}
+
+.comentario-card.ativo {
+  opacity: 1;
+  transform: translateX(0);
+  position: relative;
+}
+
+.comentario-card p {
+  font-size: 1em;
+  color: var(--c1);
+  font-style: italic;
+}
+
+.autor {
+  font-weight: bold;
+  color: var(--c2);
+  margin-top: 10px;
+}
+
+.estrelas {
+  color: #f5c518;
+  font-size: 1.2em;
+  margin-top: 5px;
 }

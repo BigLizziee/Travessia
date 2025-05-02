@@ -23,3 +23,14 @@
     carrossel.scrollTo({ left: scrollAmount, behavior: 'smooth' });
   });
 
+  const cards = document.querySelectorAll('.comentario-card');
+  let current = 0;
+  
+  function mostrarComentario() {
+    cards.forEach(card => card.classList.remove('ativo'));
+    cards[current].classList.add('ativo');
+    current = (current + 1) % cards.length;
+  }
+  
+  setInterval(mostrarComentario, 5000); 
+  
